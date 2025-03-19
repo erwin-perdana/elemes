@@ -3,3 +3,45 @@
   padding: 0 116px;
   font-family: "Rubik", sans-serif;
 }
+
+.button__primary {
+  background-color: #8BAC3E;
+  cursor: pointer;
+  --tw-duration: 300ms;
+  transition-duration: 300ms;
+  width: 147px;
+  height: 42px;
+  display: inline;
+  padding-block: 10px;
+  padding-inline: 18px;
+  border-radius: 32px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+}
+
+.button__primary:hover {
+  background-color: #F0FEEB;
+  color: #333;
+}
+
+.button__secondary {
+  background-color: #F2F2F2;
+  cursor: pointer;
+  --tw-duration: 300ms;
+  transition-duration: 300ms;
+  width: 98px;
+  height: 42px;
+  display: inline;
+  padding-block: 10px;
+  padding-inline: 18px;
+  border-radius: 32px;
+  color: #333;
+  font-size: 14px;
+  text-align: center;
+}
+
+.button__secondary:hover {
+  background-color: #8BAC3E;
+  color: #fff;
+}

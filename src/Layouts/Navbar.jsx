@@ -1,12 +1,12 @@
 import BadgeNav from "../Components/BadgeNav";
 import Button from "../Components/Button";
-import Logo from "./../assets/icon/logo.svg"
+import ILogo from "./../assets/icon/logo.svg"
 
 const Navbar = () => {
     return ( 
         <nav>
             <div class="container mx-auto flex justify-between items-center py-[27px]">
-                <img src={Logo} alt="logo" className="align-self" width={207} height={50} />
+                <img src={ILogo} alt="logo" className="align-self" width={207} height={50} />
                 <ul class="flex space-x-8 font-medium text-[14px] ">
                     <li><a href="#" className="text-[#757575] hover:text-[#333333]">Home</a></li>
                     <li><a href="#" className="text-[#757575] hover:text-[#333333]">About</a></li>
