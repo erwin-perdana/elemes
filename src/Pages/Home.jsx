@@ -7,6 +7,16 @@ import IPizza from "../assets/icon/pizza.svg"
 import IKebab from "../assets/icon/kebab.svg"
 import ISalmon from "../assets/icon/salmon.svg"
 import IDoughnut from "../assets/icon/doughnut.svg"
+import SectionHeader from "../Components/SectionHeader";
+import ReceiptCard from "../Components/ReceiptCard";
+import IMGPizza from "../assets/image/pizza.png"
+import IMGPizzaMeat from "../assets/image/pizza_meat.png"
+import IMGKebab from "../assets/image/kebab.png"
+import IMGSushi from "../assets/image/sushi.png"
+import IMGChoco from "../assets/image/choco.png"
+import IMGDonut from "../assets/image/donut.png"
+import IMGUnicorn from "../assets/image/unicorn.png"
+import IMGKathi from "../assets/image/kathi.png"
 
 const items = [
     { name: 'Cupcake', count: '22', image: ICupcakes, color: "#F0FEEB" },
@@ -19,7 +29,18 @@ const items = [
     { name: 'Kebab', count: '12', image: IKebab, color: "#EAEEFA" },
     { name: 'Salmon', count: '22', image: ISalmon, color: "#F9EEF3" },
     { name: 'Doughnut', count: '11', image: IDoughnut, color: "#F3F7D9" },
-  ];
+];
+
+const receipts = [
+    {name: "Pizza Paperoni", category: "Pizza", rating: 4, image: IMGPizza, color: "#E6F3F5"},
+    {name: "Pizza Meat", category: "Pizza", rating: 3, image: IMGPizzaMeat, color: "#E6F3F5"},
+    {name: "Doner Kebab", category: "Kebab", rating: 5, image: IMGKebab, color: "#EAEEFA"},
+    {name: "Salmon Roll", category: "Salmon", rating: 4, image: IMGSushi, color: "#F9EEF3"},
+    {name: "Cupcake Choco", category: "Cupcake", rating: 4, image: IMGChoco, color: "#F0FEEB"},
+    {name: "Doughnut Milk", category: "Doughnut", rating: 5, image: IMGDonut, color: "#F3F7D9"},
+    {name: "Doughnut Unicorn", category: "Doughnut", rating: 4, image: IMGUnicorn, color: "#F3F7D9"},
+    {name: "Kathi Kebab", category: "Kebab", rating: 4, image: IMGKathi, color: "#EAEEFA"},
+]
 
 const Home = () => {
     return ( 
@@ -44,12 +65,21 @@ const Home = () => {
             </section>
 
             <section id="category" className="mt-[65px] py-[65px]">
-                <div>
-                    <p className="text-[#333333] text-[38px] font-medium">Browser Our Category</p>
-                    <p className="text-[#8BAC3E] text-[38px] font-medium">Receipt</p>
-                </div>
+                <SectionHeader header="Browser Our Category" subHeader="Receipt" />
                 <div className="mt-[43px]">
                     <Carousel items={items} />
+                </div>
+            </section>
+
+            <section id="receipt" className="mt-[65px] py-[65px]">
+                <SectionHeader header="Browser Our Trending" subHeader="Receipt" />
+                <div className="mt-[43px] grid md:grid-cols-4 gap-x-[20px] gap-y-[30px] mb-[68px]">
+                    {receipts.map((receipt, index) => (
+                        <ReceiptCard key={index} image={receipt.image} name={receipt.name} category={receipt.category} rating={receipt.rating} color={receipt.color} />
+                    ))}
+                </div>
+                <div className="flex justify-center">
+                    <Button text="All Receipt" className="text-center" />
                 </div>
             </section>
         </>
