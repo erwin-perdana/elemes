@@ -1,6 +1,25 @@
 import Button from "../Components/Button";
 import IMGSalad from "../assets/image/salad.png"
 import IMGSaladRating from "../assets/image/salad_rating.png"
+import Carousel from "../Components/Carousel";
+import ICupcakes from "../assets/icon/cupcakes.svg"
+import IPizza from "../assets/icon/pizza.svg"
+import IKebab from "../assets/icon/kebab.svg"
+import ISalmon from "../assets/icon/salmon.svg"
+import IDoughnut from "../assets/icon/doughnut.svg"
+
+const items = [
+    { name: 'Cupcake', count: '22', image: ICupcakes, color: "#F0FEEB" },
+    { name: 'Pizza', count: '25', image: IPizza, color: "#E4F2F4" },
+    { name: 'Kebab', count: '12', image: IKebab, color: "#EAEEFA" },
+    { name: 'Salmon', count: '22', image: ISalmon, color: "#F9EEF3" },
+    { name: 'Doughnut', count: '11', image: IDoughnut, color: "#F3F7D9" },
+    { name: 'Cupcake', count: '22', image: ICupcakes, color: "#F0FEEB" },
+    { name: 'Pizza', count: '25', image: IPizza, color: "#E4F2F4" },
+    { name: 'Kebab', count: '12', image: IKebab, color: "#EAEEFA" },
+    { name: 'Salmon', count: '22', image: ISalmon, color: "#F9EEF3" },
+    { name: 'Doughnut', count: '11', image: IDoughnut, color: "#F3F7D9" },
+  ];
 
 const Home = () => {
     return ( 
@@ -18,13 +37,21 @@ const Home = () => {
                     <div>
                         <div className="relative">
                             <img src={IMGSalad} alt="salad" width={413} height={415} className="mr-[117px] mt-[56px] ml-[72px]"/>
-                            
                             <img src={IMGSaladRating} alt="salad rating" width={292} height={93} className="absolute top-[325px] left-[-53px]"/>
                         </div>
                     </div>
                 </div>
             </section>
 
+            <section id="category" className="mt-[65px] py-[65px]">
+                <div>
+                    <p className="text-[#333333] text-[38px] font-medium">Browser Our Category</p>
+                    <p className="text-[#8BAC3E] text-[38px] font-medium">Receipt</p>
+                </div>
+                <div className="mt-[43px]">
+                    <Carousel items={items} />
+                </div>
+            </section>
         </>
      );
 }
