@@ -1,11 +1,10 @@
 import ILogo from "../assets/icon/logo.svg"
-import IMail from "../assets/icon/mail.svg"
-import IPhone from "../assets/icon/phone.svg"
+import MobileMenu from "../Components/MobileMenu";
 
 const Footer = () => {
     return ( 
     <>
-        <div className="bg-[#F9FFF6] w-full h-[359px] py-[75px] px-[62px] grid grid-cols-6 gap-16">
+        <div className="bg-[#F9FFF6] w-full h-[359px] py-[75px] px-[62px] md:grid grid-cols-6 gap-16 hidden">
             <div className="col-span-2">
                 <img src={ILogo} alt="logo" />
                 <p className="text-[#757575] text-[14px] mt-4 mb-[33px]">Jl. Prof. DR. Satrio No.7, RT.3/RW.3, Karet Kuningan, 
@@ -90,8 +89,13 @@ const Footer = () => {
                 </div>
             </div>
         </div>
-        <div className="flex items-center justify-center mt-[48px] mb-[32px]">
+        <div className="md:flex items-center justify-center mt-[48px] mb-[32px] hidden">
             <p className="text-[#757575] text-[12px] text-center">© 2021 Elemes id. All rights reserved</p>
+        </div>
+        <div className="md:hidden flex justify-between mb-3">
+            <MobileMenu text="Home"/>
+            <MobileMenu text="Promotions"/>
+            <MobileMenu text="Others"/>
         </div>
     </>
      );

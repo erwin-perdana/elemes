@@ -18,6 +18,16 @@ const Carousel = ({items}) => {
           spaceBetween={175}
           slidesPerView={5}
           loop
+          breakpoints={{
+            420: {
+              slidesPerView: 2,
+              spaceBetween: 100,
+            },
+            768: {
+              slidesPerView: 5,
+              spaceBetween: 175,
+            },
+          }}
         >
           {items.map((item, index) => (
             <SwiperSlide key={index}>
@@ -27,7 +37,7 @@ const Carousel = ({items}) => {
         </Swiper>
       </div>
 
-      <div className='text-right grid grid-cols-8'>
+      <div className='text-right md:grid grid-cols-8 hidden'>
         <div className='col-span-6'></div>
         <button
           onClick={() => swiperRef.current?.swiper.slidePrev()}
